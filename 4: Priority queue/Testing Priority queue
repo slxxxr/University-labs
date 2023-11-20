@@ -1,0 +1,13 @@
+#include <iostream>
+#include "priority_queue.h"
+
+
+int main() {
+
+	priority_queue<int> que;
+
+	que.push(10);
+
+	cout << que.top();
+
+}
