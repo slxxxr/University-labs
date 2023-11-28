@@ -1,8 +1,14 @@
-#include "Treugolnik.h"
+#include "treuh.h"
 
 
 Treugolnik::Treugolnik() {
-	x1 = x2 = x3 = y1 = y2 = y3 = 0;
+	x1 = 0;
+	x2 = 0;
+	x3 = 0;
+
+	y1 = 0;
+	y2 = 0;
+	y3 = 0;
 }
 
 Treugolnik::Treugolnik(double x1, double y1, double x2, double y2, double x3, double y3) {
@@ -14,6 +20,8 @@ Treugolnik::Treugolnik(double x1, double y1, double x2, double y2, double x3, do
 
 	this->x3 = x3;
 	this->y3 = y3;
+
+	//cout << "Create" << endl;
 }
 
 Treugolnik::Treugolnik(const Treugolnik& other) {
@@ -25,7 +33,10 @@ Treugolnik::Treugolnik(const Treugolnik& other) {
 
 	this->x3 = other.x3;
 	this->y3 = other.y3;
+
+	//cout << "Copy" << endl;
 }
+
 
 void Treugolnik::move(double x, double y) {
 	this->x1 += x;
@@ -57,7 +68,7 @@ bool Treugolnik::operator > (Treugolnik& other) {
 	return (this->square() > other.square());
 }
 
-Treugolnik& Treugolnik::operator = (Treugolnik& other) {
+Treugolnik Treugolnik::operator = (Treugolnik other) {
 	this->x1 = other.x1;
 	this->y1 = other.y1;
 
@@ -67,10 +78,12 @@ Treugolnik& Treugolnik::operator = (Treugolnik& other) {
 	this->x3 = other.x3;
 	this->y3 = other.y3;
 
+	//cout << "Pris" << endl;
+
 	return *this;
 }
 
-void Treugolnik::operator *= (double n) {
+Treugolnik Treugolnik::operator *= (double n) {
 	this->x1 *= n;
 	this->y1 *= n;
 
@@ -79,7 +92,28 @@ void Treugolnik::operator *= (double n) {
 
 	this->x3 *= n;
 	this->y3 *= n;
+
+	
+	return *this;
 }
+
+
+Treugolnik Treugolnik::operator + (double n) {
+
+	Treugolnik temp = *this;
+
+	temp.x1 += n;
+	temp.y1 += n;
+
+	temp.x2 += n;
+	temp.y2 += n;
+
+	temp.x3 += n;
+	temp.y3 += n;
+
+	return temp;
+}
+
 
 ostream& operator << (ostream& out, Treugolnik& T) {
 	out << "X1:= " << T.x1 << "	 Y1:= " << T.y1 << "\n";
@@ -102,3 +136,4 @@ istream& operator >> (istream& in, Treugolnik& T) {
 
 	return in;
 }
+
