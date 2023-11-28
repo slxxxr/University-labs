@@ -24,9 +24,11 @@ public:
 
 	bool operator > (Treugolnik& other);
 
-	Treugolnik& operator = (Treugolnik& other);
+	Treugolnik operator + (double n);
 
-	void operator *= (double n);
+	Treugolnik operator = (Treugolnik other);
+
+	Treugolnik operator *= (double n);
 
 	friend ostream& operator << (ostream& out, Treugolnik& T);
 
