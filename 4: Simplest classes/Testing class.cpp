@@ -1,23 +1,19 @@
-﻿#include "Treugolnik.h"
+#include "treuh.h"
 
 
 
 int main() {
 
-	Treugolnik one(-1, -2, 5, 1, 1, 4);
+	cout.setf(ios_base::fixed);
+
+	Treugolnik t1(1, 1, 2, 2, 3, 3), t2;
+
+	cout << "t1 " << endl << t1;
+	cout << "t2: " << endl << t2;
 	
-	cout << one;
 
-	cin >> one;
+	cout << "t1 " << endl << t1;
+	cout << "t2 " << endl << t2;
 
-	cout << one;
 
-	cout << "Square: " << one.square() << "\n";
-
-	one *= 2;
-
-	cout << one << "\n";
-
-	cout << "Square: " << one.square() << "\n";
-	
 }
