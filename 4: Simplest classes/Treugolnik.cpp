@@ -34,7 +34,12 @@ Treugolnik::Treugolnik(const Treugolnik& other) {
 	this->x3 = other.x3;
 	this->y3 = other.y3;
 
-	//cout << "Copy" << endl;
+	cout << "Copy " << this << endl;
+}
+
+Treugolnik::~Treugolnik()
+{
+	cout << "Destroy " << this << endl;
 }
 
 
@@ -78,7 +83,7 @@ Treugolnik Treugolnik::operator = (Treugolnik other) {
 	this->x3 = other.x3;
 	this->y3 = other.y3;
 
-	//cout << "Pris" << endl;
+	cout << "Pris " << this << endl;
 
 	return *this;
 }
