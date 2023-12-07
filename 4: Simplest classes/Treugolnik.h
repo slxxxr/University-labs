@@ -16,6 +16,8 @@ public:
 
 	Treugolnik(const Treugolnik& other);
 
+	~Treugolnik();
+
 	void move(double x, double y);
 
 	double square();
@@ -35,3 +37,5 @@ public:
 	friend istream& operator >> (istream& in, Treugolnik& T);
 
 };
+
+
