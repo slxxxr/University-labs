@@ -11,9 +11,9 @@ int main() {
 	cout << "t1 " << endl << t1;
 	cout << "t2: " << endl << t2;
 	
+	t2 = t1 + 2;
 
 	cout << "t1 " << endl << t1;
 	cout << "t2 " << endl << t2;
-
 
 }
