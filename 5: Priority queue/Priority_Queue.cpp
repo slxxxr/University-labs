@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -79,14 +80,42 @@ int main() {
 	que.push(213);
 
 	cout << que.top() << endl;
-	
+
 	que.pop();
 	cout << que.top() << endl;
-	
+
 	que.pop();
 	cout << que.top() << endl;
 
 	que.push(1212);
 	cout << que.top() << endl;
+
+	priority_queue<vector<int>> q1;
+	q1.push({ 1,2,3,4 });
+	q1.push({ 33,223,32,4 });
+	q1.push({ 2231,4 });
 	
+	for (int i : q1.top()) {
+		cout << i << " ";
+	}cout << endl;
+	
+	q1.pop();
+	for (int i : q1.top()) {
+		cout << i << " ";
+	}cout << endl;
+
+	priority_queue<set<int>> q2;
+	q2.push({ 2,21,332 });
+	q2.push({ 3323,32321 });
+	q2.push({ 322112 });
+
+	for (int i : q2.top()) {
+		cout << i << " ";
+	} cout << endl;
+	
+	q2.pop();
+	for (int i : q2.top()) {
+		cout << i << " ";
+	} cout << endl;
+
 }
