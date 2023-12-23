@@ -62,7 +62,7 @@ public:
 		return this->heap[0];
 	}
 
-	priority_queue& operator=(priority_queue& other) {
+	priority_queue operator=(priority_queue other) {
 		this->heap = other.heap;
 
 		return *this;
